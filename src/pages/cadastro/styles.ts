@@ -3,32 +3,31 @@ import { StyleSheet, Dimensions } from "react-native";
 export const style = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 30, // Aumentado para centralizar melhor no iPhone
+    backgroundColor: "#f5f5f5", // Cor conforme slide
+    paddingHorizontal: 20, // Margem lateral para não encostar no vidro
     justifyContent: "center",
-    backgroundColor: "#f5f5f5",
   },
   title: {
-    fontSize: 28, // Um pouco maior para destaque
+    fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 40,
+    marginBottom: 30, // Conforme slide
   },
   label: {
     fontSize: 16,
-    marginBottom: 8,
-    marginTop: 15,
-    fontWeight: "600",
+    marginBottom: 5,
+    marginTop: 15, // Conforme slide
   },
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#ddd",
-    borderRadius: 12, // Bordas mais suaves
-    paddingHorizontal: 15,
+    borderRadius: 10, // Arredondamento conforme slide
+    paddingHorizontal: 10,
     backgroundColor: "#fff",
-    height: 55, // Altura maior para facilitar o toque no iPhone
-    width: "100%", // Garante que use toda a largura disponível
+    height: 50,
+    width: "100%", // Garante que ocupe a largura total disponível
   },
   input: {
     flex: 1,
@@ -36,16 +35,16 @@ export const style = StyleSheet.create({
     fontSize: 16,
   },
   button: {
-    marginTop: 40,
-    backgroundColor: "#007bff",
-    padding: 18,
-    borderRadius: 12,
+    marginTop: 30,
+    backgroundColor: "#007bff", // Azul do slide
+    padding: 15,
+    borderRadius: 10, // Arredondamento conforme slide
     alignItems: "center",
-    width: "100%", // Botão largo ocupando a tela
+    width: "100%", // Força o botão a ser largo
   },
   buttonText: {
     color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 16,
+    fontWeight: "bold", // Conforme slide
   },
 });

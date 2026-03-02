@@ -4,12 +4,7 @@ import Login from "./src/pages/cadastro";
 import Cadastro from "./src/pages/cadastro";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Cadastro />
-    </View>
-  );
+  return <Cadastro />;
 }
 
 const styles = StyleSheet.create({
