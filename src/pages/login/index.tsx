@@ -16,6 +16,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 type RootStackParamList = {
   Login: undefined;
   Cadastro: undefined;
+  Home: undefined;
 };
 
 type Props = NativeStackScreenProps<RootStackParamList, "Login">;
@@ -29,7 +30,9 @@ export default function Login({ navigation }: Props) {
       if (!email || !senha) {
         return Alert.alert("Preencha todos os campos");
       }
-      Alert.alert("Logado com sucesso!!!");
+      Alert.alert("Logado com sucesso!", "", [
+        { text: "OK", onPress: () => navigation.navigate("Home") },
+      ]); // Navega para a Home após o ok [cite: 890, 891]
     } catch (error) {
       console.log("Erro ao logar: ", error);
     }

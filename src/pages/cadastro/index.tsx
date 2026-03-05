@@ -1,3 +1,4 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import {
   Text,
@@ -10,7 +11,14 @@ import {
 import { MaterialIcons } from "@expo/vector-icons"; //
 import { style } from "./styles";
 
-export default function Cadastro() {
+type RootStackParamList = {
+  Login: undefined;
+  Cadastro: undefined;
+  Home: undefined;
+};
+type Props = NativeStackScreenProps<RootStackParamList, "Cadastro">;
+
+export default function Cadastro({ navigation }: Props) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -19,7 +27,9 @@ export default function Cadastro() {
     if (!nome || !email || !senha) {
       return Alert.alert("Preencha todos os campos"); // Validação
     }
-    Alert.alert("Cadastro realizado com sucesso!"); // Sucesso
+    Alert.alert("Cadastro realizado com sucesso!", "", [
+      { text: "OK", onPress: () => navigation.navigate("Home") },
+    ]); // Navega para a Home após o ok [cite: 858] // Sucesso
   }
 
   return (
