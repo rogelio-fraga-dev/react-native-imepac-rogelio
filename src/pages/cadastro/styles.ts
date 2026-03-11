@@ -1,50 +1,65 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
+import { themes } from "../../global/themes";
 
 export const style = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#f5f5f5", // Cor conforme slide
-    paddingHorizontal: 20, // Margem lateral para não encostar no vidro
+    flexGrow: 1,
+    backgroundColor: themes.colors.background,
+    paddingHorizontal: themes.spacing.lg,
     justifyContent: "center",
   },
+  boxTop: {
+    alignItems: "center",
+    marginBottom: themes.spacing.lg,
+  },
   title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: 30, // Conforme slide
+    fontSize: themes.typography.fontSize.header,
+    fontWeight: themes.typography.fontWeight.bold,
+    color: themes.colors.text,
+    marginTop: themes.spacing.md,
   },
   label: {
-    fontSize: 16,
-    marginBottom: 5,
-    marginTop: 15, // Conforme slide
+    fontSize: themes.typography.fontSize.regular,
+    fontWeight: themes.typography.fontWeight.semiBold,
+    color: themes.colors.textLight,
+    marginBottom: themes.spacing.sm,
+    marginTop: themes.spacing.md,
   },
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: themes.colors.surface,
     borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 10, // Arredondamento conforme slide
-    paddingHorizontal: 10,
-    backgroundColor: "#fff",
+    borderColor: themes.colors.border,
+    borderRadius: 8,
+    paddingHorizontal: themes.spacing.md,
     height: 50,
-    width: "100%", // Garante que ocupe a largura total disponível
   },
   input: {
     flex: 1,
-    height: "100%",
-    fontSize: 16,
+    fontSize: themes.typography.fontSize.regular,
+    color: themes.colors.text,
   },
   button: {
-    marginTop: 30,
-    backgroundColor: "#007bff", // Azul do slide
-    padding: 15,
-    borderRadius: 10, // Arredondamento conforme slide
+    backgroundColor: themes.colors.secondary,
+    paddingVertical: themes.spacing.md,
+    borderRadius: 8,
     alignItems: "center",
-    width: "100%", // Força o botão a ser largo
+    marginTop: themes.spacing.xl,
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold", // Conforme slide
+    color: themes.colors.surface,
+    fontSize: themes.typography.fontSize.regular,
+    fontWeight: themes.typography.fontWeight.bold,
+  },
+  linkText: {
+    color: themes.colors.textLight,
+    textAlign: "center",
+    marginTop: themes.spacing.lg,
+    marginBottom: themes.spacing.xl,
+  },
+  linkHighlight: {
+    color: themes.colors.primary,
+    fontWeight: themes.typography.fontWeight.bold,
   },
 });

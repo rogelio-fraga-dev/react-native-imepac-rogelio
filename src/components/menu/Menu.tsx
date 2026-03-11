@@ -1,40 +1,49 @@
 import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../pages/AppNavigation";
-import { TouchableOpacity, View, Text } from "react-native";
 import { style } from "./styles";
-import { MaterialIcons } from "@expo/vector-icons"; // Usando ícones para ficar igual ao slide
+import { MaterialIcons } from "@expo/vector-icons";
+import { themes } from "../../global/themes";
 
 type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
 
 export default function Menu() {
-  const navigation = useNavigation<NavigationProps>(); // Hook de navegação [cite: 947]
+  const navigation = useNavigation<NavigationProps>();
 
   return (
     <View style={style.menuContainer}>
       <TouchableOpacity
+        style={style.menuItem}
         onPress={() => navigation.navigate("Home")}
-        style={{ alignItems: "center" }}
       >
-        <MaterialIcons name="home" size={24} color="black" />
-        <Text style={style.menuItem}>Home</Text>
+        <MaterialIcons
+          name="dashboard"
+          size={24}
+          color={themes.colors.primary}
+        />
+        <Text style={style.menuText}>Início</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("Login")}
-        style={{ alignItems: "center" }}
+        style={style.menuItem}
+        onPress={() => navigation.navigate("Explorar")}
       >
-        <MaterialIcons name="login" size={24} color="orange" />
-        <Text style={style.menuItem}>Login</Text>
+        <MaterialIcons name="explore" size={24} color={themes.colors.primary} />
+        <Text style={style.menuText}>Explorar</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("Cadastro")}
-        style={{ alignItems: "center" }}
+        style={style.menuItem}
+        onPress={() => navigation.navigate("Tarefas")}
       >
-        <MaterialIcons name="edit" size={24} color="orange" />
-        <Text style={style.menuItem}>Cadastro</Text>
+        <MaterialIcons
+          name="assignment"
+          size={24}
+          color={themes.colors.primary}
+        />
+        <Text style={style.menuText}>Demandas</Text>
       </TouchableOpacity>
     </View>
   );
